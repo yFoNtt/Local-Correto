@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css"
+        integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mukta:wght@300;700&display=swap"
+        rel="stylesheet">
+    <title>Local Correto</title>
+</head>
+
+<body>
+
+   <section class="page2" id="mapa">
+            <div class="pure-g">
+                <div class="pure-u-1">
+                    <div class="buscaMapa pure-form pure-g">
+                        <h1 class="pure-u-1 txt1">Mapa Interativo</h1>
+                        <input type="text" id="busca" class="pure-u-1 pure-u-md-4-5"
+                            placeholder="Buscar pontos de coleta...">
+                        <button onclick="pontosColeta()"
+                            class="pure-button pure-button-primary pure-u-1 pure-u-md-1-5">Buscar</button>
+                        <div id="cardBusca">
+                            <form>
+                                <ul>
+                                    <li><a href="#mapa" onclick="mostraCaiua()">
+                                            <h2>Ecoponto Caiuá</h2>
+                                        </a></li>
+
+                                    <li><a href="#mapa" onclick="mostraCajuru()">
+                                            <h2>Ecoponto Cajuru</h2>
+                                        </a></li>
+
+                                    <li><a href="#mapa" onclick="mostraCampoSantana()">
+                                            <h2>Ecoponto Campo de Santana</h2>
+                                        </a></li>
+
+                                    <li><a href="#mapa" onclick="mostraCIC()">
+                                            <h2>Ecoponto CIC</h2>
+                                        </a></li>
+
+                                    <li><a href="#mapa" onclick="mostraericoVerissimo()">
+                                            <h2>Ecoponto Érico Veríssimo</h2>
+                                        </a></li>
+
+                                    <li><a href="#mapa" onclick="mostraGuacui()">
+                                            <h2>Ecoponto Guaçuí</h2>
+                                        </a></li>
+
+                                    <li><a href="#mapa" onclick="mostraIcarai()">
+                                            <h2>Ecoponto Icaraí</h2>
+                                        </a></li>
+
+                                    <li><a href="#mapa" onclick="mostraJandaia()">
+                                            <h2>Ecoponto Jandaia</h2>
+
+                                    <li><a href="#mapa" onclick="mostraMetropolitano()">
+                                            <h2>Ecoponto Metropolitano
+                                            </h2>
+                                        </a></li>
+
+                                    <li><a href="#mapa" onclick="mostraGomm()">
+                                            <h2>Ecoponto Parque Gomm</h2>
+
+                                    <li><a href="#mapa" onclick="mostraSambaqui()">
+                                            <h2>Ecoponto Sambaqui</h2>
+                                        </a></li>
+
+                                    <li><a href="#mapa" onclick="mostraVilaNova()">
+                                            <h2>Ecoponto Vila Nova</h2>
+                                        </a></li>
+
+                                    <li><a href="#mapa" onclick="mostraVilaVerde()">
+                                            <h2>Ecoponto Vila Verde</h2>
+                                        </a></li>
+                                </ul>
+
+
+                                <div id="dialogs">
+
+                                    <dialog id="caiua">
+                                        <h2>Depósito de Resíduos Sólidos</h2>
+                                        <h1>Ecoponto Caiuá</h1>
+                                        <hr>
+                                        <label><b>Tipo: </b>Ecoponto Misto</label><br>
+                                        <label><b>Endereço: </b>AV. JUSCELINO KUBITSCHEK DE OLIVEIRA - LD,
+                                            6800</label><br>
+                                        <label><b>Complemento: </b> Esquina com a Estr. Velha do Barigui</label><br>
+                                        <label><b>Bairro: </b>Cidade Industrial de Curitiba, Curitiba - PR</label><br>
+                                        <label><b>Regional: </b>CIC</label><br>
+                                        <label><b>Telefone: </b>157</label><br>
+                                        <label><b>Email: </b>smma@curitiba.pr.gov.br</label><br>
+                                        <label><b>Site: </b> <a
+                                                href="https://www.curitiba.pr.gov.br/servicos/ecopontos-descarte-correto-de-residuos/716">
+                                                https://www.curitiba.pr.gov.br/servicos/
+                                                ecopontos-descarte-correto-de-residuos/716</a></label><br>
+                                        <label><b>Período de funcionamento: </b> Manhã, Tarde</label><br>
+                                        <label><b>Atendimento: </b>-2ª feira a sábado, das 8h às 12h e das 13h às 17h
+                                        </label><br>
+                                    </dialog>
+
+                                    <dialog id="cajuru">
+
+                                        <h2>Depósito de Resíduos Sólidos</h2>
+                                        <h1>Ecoponto Cajuru</h1>
+                                        <hr>
+                                        <label><b>Tipo: </b>Ecoponto Misto</label><br>
+                                        <label><b>Endereço: </b>R. NEUSA VIEIRA BET, 255</label><br>
+                                        <label><b>Complemento: </b> Esquina com a R. Augusto Forbeck</label><br>
+                                        <label><b>Bairro: </b> Cajuru, Curitiba - PR</label><br>
+                                        <label><b>Regional: </b>Cajuru</label><br>
+                                        <label><b>Telefone: </b>156</label><br>
+                                        <label><b>Email: </b>smma@curitiba.pr.gov.br</label><br>
+                                        <label><b>Site: </b> <a
+                                                href="https://www.curitiba.pr.gov.br/servicos/ecopontos-descarte-correto-de-residuos/716">
+                                                https://www.curitiba.pr.gov.br/servicos/
+                                                ecopontos-descarte-correto-de-residuos/716</a></label><br>
+                                        <label><b>Período de funcionamento: </b> Manhã, Tarde</label><br>
+                                        <label><b>Atendimento: </b>-2ª feira a sábado, das 8h às 12h e das 13h às 17h
+                                        </label><br>
+
+                                    </dialog>
+
+                                    <dialog id="campoSantana">
+
+                                        <h2>Depósito de Resíduos Sólidos</h2>
+                                        <h1>Ecoponto Campo de Santana</h1>
+                                        <hr>
+                                        <label><b>Tipo: </b>Ecoponto Misto</label><br>
+                                        <label><b>Endereço: </b> R. TERESA DE FREITAS TAVARES, 331</label><br>
+                                        <label><b>Bairro: </b> Campo de Santana, Curitiba - PR</label><br>
+                                        <label><b>Regional: </b>Tatuquara</label><br>
+                                        <label><b>Telefone: </b>156</label><br>
+                                        <label><b>Email: </b>smma@curitiba.pr.gov.br</label><br>
+                                        <label><b>Site: </b> <a
+                                                href="https://www.curitiba.pr.gov.br/servicos/ecopontos-descarte-correto-de-residuos/716">
+                                                https://www.curitiba.pr.gov.br/servicos/
+                                                ecopontos-descarte-correto-de-residuos/716</a></label><br>
+                                        <label><b>Período de funcionamento: </b> Manhã, Tarde</label><br>
+                                        <label><b>Atendimento: </b>-2ª feira a sábado, das 8h às 12h e das 13h às 17h
+                                        </label><br>
+
+                                    </dialog>
+
+                                    <dialog id="CIC">
+
+                                        <h2>Depósito de Resíduos Sólidos</h2>
+                                        <h1>Ecoponto CIC</h1>
+                                        <hr>
+                                        <label><b>Tipo: </b>Ecoponto Misto</label><br>
+                                        <label><b>Endereço: </b> R. ORESTES THÁ, 1765</label><br>
+                                        <label><b>Complemento: </b> Esquina com a R. Des. Cid Campelo</label><br>
+                                        <label><b>Bairro: </b>Cidade Industrial de Curitiba, Curitiba - PR</label><br>
+                                        <label><b>Regional: </b>CIC</label><br>
+                                        <label><b>Telefone: </b>156</label><br>
+                                        <label><b>Email: </b>smma@curitiba.pr.gov.br</label><br>
+                                        <label><b>Site: </b> <a
+                                                href="https://www.curitiba.pr.gov.br/servicos/ecopontos-descarte-correto-de-residuos/716">
+                                                https://www.curitiba.pr.gov.br/servicos/
+                                                ecopontos-descarte-correto-de-residuos/716</a></label><br>
+                                        <label><b>Período de funcionamento: </b> Manhã, Tarde</label><br>
+                                        <label><b>Atendimento: </b>-2ª feira a sábado, das 8h às 12h e das 13h às 17h
+                                        </label><br>
+
+                                    </dialog>
+
+
+                                    <dialog id="ericoVerissimo">
+
+                                        <h2>Depósito de Resíduos Sólidos</h2>
+                                        <h1>Ecoponto Érico Veríssimo</h1>
+                                        <hr>
+                                        <label><b>Tipo: </b>Ecoponto Misto</label><br>
+                                        <label><b>Endereço: </b> R. CAP. AMIN MOSSE, 557</label><br>
+                                        <label><b>Complemento: </b> Pç. Cláudio Manoel de Loyola e Silva</label><br>
+                                        <label><b>Bairro: </b>Alto Boqueirão, Curitiba - PR</label><br>
+                                        <label><b>Regional: </b>Boqueirão</label><br>
+                                        <label><b>Telefone: </b>156</label><br>
+                                        <label><b>Email: </b>smma@curitiba.pr.gov.br</label><br>
+                                        <label><b>Site: </b> <a
+                                                href="https://www.curitiba.pr.gov.br/servicos/ecopontos-descarte-correto-de-residuos/716">
+                                                https://www.curitiba.pr.gov.br/servicos/
+                                                ecopontos-descarte-correto-de-residuos/716</a></label><br>
+                                        <label><b>Período de funcionamento: </b> Manhã, Tarde</label><br>
+                                        <label><b>Atendimento: </b>-2ª feira a sábado, das 8h às 12h e das 13h às 17h
+                                        </label><br>
+
+                                    </dialog>
+
+                                    <dialog id="guacui">
+
+                                        <h2>Depósito de Resíduos Sólidos</h2>
+                                        <h1>Ecoponto Guaçuí</h1>
+                                        <hr>
+                                        <label><b>Tipo: </b>Ecoponto Misto</label><br>
+                                        <label><b>Endereço: </b> R. MARIA AUGUSTA, 1 </label><br>
+                                        <label><b>Complemento: </b> Esquina com a Trav. Eli Volpato</label><br>
+                                        <label><b>Bairro: </b> Sítio Cercado, Curitiba - PR</label><br>
+                                        <label><b>Regional: </b>Bairro Novo</label><br>
+                                        <label><b>Telefone: </b>156</label><br>
+                                        <label><b>Email: </b>smma@curitiba.pr.gov.br</label><br>
+                                        <label><b>Site: </b> <a
+                                                href="https://www.curitiba.pr.gov.br/servicos/ecopontos-descarte-correto-de-residuos/716">
+                                                https://www.curitiba.pr.gov.br/servicos/
+                                                ecopontos-descarte-correto-de-residuos/716</a></label><br>
+                                        <label><b>Período de funcionamento: </b> Manhã, Tarde</label><br>
+                                        <label><b>Atendimento: </b>-2ª feira a sábado, das 8h às 12h e das 13h às 17h
+                                        </label><br>
+
+                                    </dialog>
+
+
+                                    <dialog id="icarai">
+
+                                        <h2>Depósito de Resíduos Sólidos</h2>
+                                        <h1>Ecoponto Icaraí</h1>
+                                        <hr>
+                                        <label><b>Tipo: </b>Ecoponto Misto</label><br>
+                                        <label><b>Endereço: </b> R. OLINDO CAETANI, 1330 </label><br>
+                                        <label><b>Complemento: </b> Pç. Homero Morinobu Oguido</label><br>
+                                        <label><b>Bairro: </b> Uberaba, Curitiba - PR</label><br>
+                                        <label><b>Regional: </b>Cajuru</label><br>
+                                        <label><b>Telefone: </b>156</label><br>
+                                        <label><b>Email: </b>smma@curitiba.pr.gov.br</label><br>
+                                        <label><b>Site: </b> <a
+                                                href="https://www.curitiba.pr.gov.br/servicos/ecopontos-descarte-correto-de-residuos/716">
+                                                https://www.curitiba.pr.gov.br/servicos/
+                                                ecopontos-descarte-correto-de-residuos/716</a></label><br>
+                                        <label><b>Período de funcionamento: </b> Manhã, Tarde</label><br>
+                                        <label><b>Atendimento: </b>-2ª feira a sábado, das 8h às 12h e das 13h às 17h
+                                        </label><br>
+
+                                    </dialog>
+
+                                    <dialog id="jandaia">
+
+                                        <h2>Depósito de Resíduos Sólidos</h2>
+                                        <h1>Ecoponto Jandaia</h1>
+                                        <hr>
+                                        <label><b>Tipo: </b>Ecoponto Misto</label><br>
+                                        <label><b>Endereço: </b> R. JORN. JOSÉ PEDRO DOS SANTOS - PEDRINHO,
+                                            801</label><br>
+                                        <label><b>Complemento: </b> Ao lado do Eco Cidadão Jandaia</label><br>
+                                        <label><b>Bairro: </b> Uberaba, Curitiba - PR</label><br>
+                                        <label><b>Regional: </b> Bairro Novo</label><br>
+                                        <label><b>Telefone: </b>156</label><br>
+                                        <label><b>Email: </b>smma@curitiba.pr.gov.br</label><br>
+                                        <label><b>Site: </b> <a
+                                                href="https://www.curitiba.pr.gov.br/servicos/ecopontos-descarte-correto-de-residuos/716">
+                                                https://www.curitiba.pr.gov.br/servicos/
+                                                ecopontos-descarte-correto-de-residuos/716</a></label><br>
+                                        <label><b>Período de funcionamento: </b> Manhã, Tarde</label><br>
+                                        <label><b>Atendimento: </b>-2ª feira a sábado, das 8h às 12h e das 13h às 17h
+                                        </label><br>
+
+                                    </dialog>
+
+                                    <dialog id="metropolitano">
+
+                                        <h2>Depósito de Resíduos Sólidos</h2>
+                                        <h1>Ecoponto Metropolitano</h1>
+                                        <hr>
+                                        <label><b>Tipo: </b>Ecoponto Misto</label><br>
+                                        <label><b>Endereço: </b> R. DA INDEPENDÊNCIA, 340</label><br>
+                                        <label><b>Complemento: </b>Esquina com a Rua Pedro Corrêa da Cruz</label><br>
+                                        <label><b>Bairro: </b> São Braz, Curitiba - PR</label><br>
+                                        <label><b>Regional: </b> Santa Felicidade</label><br>
+                                        <label><b>Telefone: </b>156</label><br>
+                                        <label><b>Email: </b>smma@curitiba.pr.gov.br</label><br>
+                                        <label><b>Site: </b> <a
+                                                href="https://www.curitiba.pr.gov.br/servicos/ecopontos-descarte-correto-de-residuos/716">
+                                                https://www.curitiba.pr.gov.br/servicos/
+                                                ecopontos-descarte-correto-de-residuos/716</a></label><br>
+                                        <label><b>Período de funcionamento: </b> Manhã, Tarde</label><br>
+                                        <label><b>Atendimento: </b>-2ª feira a sábado, das 8h às 12h e das 13h às 17h
+                                        </label><br>
+
+                                    </dialog>
+
+                                    <dialog id="sambaqui">
+
+                                        <h2>Depósito de Resíduos Sólidos</h2>
+                                        <h1>Ecoponto Sambaqui</h1>
+                                        <hr>
+                                        <label><b>Tipo: </b>Ecoponto Misto</label><br>
+                                        <label><b>Endereço: </b>R. RAD. SOUZA MORENO, 30</label><br>
+                                        <label><b>Complemento: </b>Esquina com a R. José Otávio Meira dos
+                                            Anjos</label><br>
+                                        <label><b>Bairro: </b>Sítio Cercado, Curitiba - PR</label><br>
+                                        <label><b>Regional: </b> Bairro Novo</label><br>
+                                        <label><b>Telefone: </b>156</label><br>
+                                        <label><b>Email: </b>smma@curitiba.pr.gov.br</label><br>
+                                        <label><b>Site: </b> <a
+                                                href="https://www.curitiba.pr.gov.br/servicos/ecopontos-descarte-correto-de-residuos/716">
+                                                https://www.curitiba.pr.gov.br/servicos/
+                                                ecopontos-descarte-correto-de-residuos/716</a></label><br>
+                                        <label><b>Período de funcionamento: </b> Manhã, Tarde</label><br>
+                                        <label><b>Atendimento: </b>-2ª feira a sábado, das 8h às 12h e das 13h às 17h
+                                        </label><br>
+
+                                    </dialog>
+
+                                    <dialog id="vilaNova">
+
+                                        <h2>Depósito de Resíduos Sólidos</h2>
+                                        <h1>Ecoponto Vila Nova</h1>
+                                        <hr>
+                                        <label><b>Tipo: </b>Ecoponto Misto</label><br>
+                                        <label><b>Endereço: </b> R. TEN. CEL. VILAGRAN CABRITA, 2495</label><br>
+                                        <label><b>Complemento: </b>Esquina com a R. Nair Ferraz Cazellato</label><br>
+                                        <label><b>Bairro: </b>Alto Boqueirão, Curitiba - PR</label><br>
+                                        <label><b>Regional: </b> Boqueirão</label><br>
+                                        <label><b>Telefone: </b>156</label><br>
+                                        <label><b>Email: </b>smma@curitiba.pr.gov.br</label><br>
+                                        <label><b>Site: </b> <a
+                                                href="https://www.curitiba.pr.gov.br/servicos/ecopontos-descarte-correto-de-residuos/716">
+                                                https://www.curitiba.pr.gov.br/servicos/
+                                                ecopontos-descarte-correto-de-residuos/716</a></label><br>
+                                        <label><b>Período de funcionamento: </b> Manhã, Tarde</label><br>
+                                        <label><b>Atendimento: </b>-2ª feira a sábado, das 8h às 12h e das 13h às 17h
+                                        </label><br>
+
+                                    </dialog>
+
+
+                                    <dialog id="vilaVerde">
+
+                                        <h2>Depósito de Resíduos Sólidos</h2>
+                                        <h1>Ecoponto Vila Verde</h1>
+                                        <hr>
+                                        <label><b>Tipo: </b>Ecoponto Misto</label><br>
+                                        <label><b>Endereço: </b>  R. LYDIO PAULO BETTEGA, 200</label><br>
+                                        <label><b>Complemento: </b>Esquina com a R. Marco Campos</label><br>
+                                        <label><b>Bairro: </b>Cidade Industrial de Curitiba, Curitiba - PR</label><br>
+                                        <label><b>Regional: </b>CIC</label><br>
+                                        <label><b>Telefone: </b>156</label><br>
+                                        <label><b>Email: </b>smma@curitiba.pr.gov.br</label><br>
+                                        <label><b>Site: </b> <a
+                                                href="https://www.curitiba.pr.gov.br/servicos/ecopontos-descarte-correto-de-residuos/716">
+                                                https://www.curitiba.pr.gov.br/servicos/
+                                                ecopontos-descarte-correto-de-residuos/716</a></label><br>
+                                        <label><b>Período de funcionamento: </b> Manhã, Tarde</label><br>
+                                        <label><b>Atendimento: </b>-2ª feira a sábado, das 8h às 12h e das 13h às 17h
+                                        </label><br>
+
+                                    </dialog>
+
+
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                    <div id="map" class="pure-u-1-2"></div>
+                </div>
+            </div>
+        </section>
+
+      </body>
+</html>
