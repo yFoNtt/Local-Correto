@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@200;400;600;900&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #ECF8E5;
+    font-family: "Source Sans 3", sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #347571;
+}
+
+.header {
+    background-color: #FFFFFF;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    flex-wrap: wrap;
+}
+
+.menuLink {
+    margin-top: 10px;
+    font-family: "Mukta", sans-serif;
+    color: #054D40;
+}
+
+.menuLink a {
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+
+#home img {
+    max-width: 100%; /* Diminui o tamanho da imagem */
+    height: auto;
+    margin-left: 20%;
+    margin-top: 10%;
+}
+
+
+.txt1 {
+    max-width: 30%;
+    margin-top: 7%;
+    text-align: left;
+    margin-left: 10%;
+    font-size: 30px;
+    font-family: "Mukta", sans-serif;
+    color: #054D40;
+ 
+}
+
+.img1 {
+    width: 700px;
+    height: auto;
+}
+
+h2 {
+    font-family: "Mukta", sans-serif;
+    color: #054D40;
+}
+
+#mapa h1{
+    max-width: 500px;
+    font-size: 50px;
+    margin-left: 5%;
+    margin-top: 20%;
+}
+
+
+#mapa {
+    width: 100vh;
+    height: 100vh;
+}
+
+#map {
+    width: 40rem;
+    height: 27rem;
+    margin-top: -65%;
+    margin-left: 100%;
+    border-radius: 10%;
+}
+
